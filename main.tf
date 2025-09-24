@@ -14,6 +14,8 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
+
+
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.3.0"
@@ -36,4 +38,8 @@ resource "aws_instance" "blog" {
   tags = {
     Name = "Learning Terraform"
   }
+}
+
+data "aws_vpc" "default" {
+  default = true
 }
