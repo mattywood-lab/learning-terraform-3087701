@@ -41,10 +41,6 @@ resource "aws_instance" "blog" {
   }
 }
 
-data "aws_vpc" "default" {
-  default = true
-}
-
 module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
